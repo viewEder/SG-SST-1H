@@ -106,15 +106,3 @@
       flex: 1;
     }
   }
-
-  .justificado {
-    text-align: justify !important;
-  }
-
-  .django-ckeditor-widget {
-    width: 100% !important;
-
-  }
-  .cke_1, .cke .cke_reset, .cke_chrome, .cke_editor_id_biografia, .cke_ltr, .cke_browser_webkit {
-    width: 100% !important;
-  }
