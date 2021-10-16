@@ -106,3 +106,9 @@
       flex: 1;
     }
   }
+
+  .fondo {
+    background-image: url('../media/img/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
