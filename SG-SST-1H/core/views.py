@@ -8,4 +8,8 @@ class HomePageView(TemplateView):
     template_name = 'core/index.html'
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+        return render(request, self.template_name, {
+            'titulo': 'SG Seguridad en el Trabajo',
+            'mensaje': 'Python 1H',
+            'boton': 'Ingresar'
+        })
