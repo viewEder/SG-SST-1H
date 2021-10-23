@@ -12,4 +12,5 @@ class HomePageView(TemplateView):
             'titulo': 'SG Seguridad en el Trabajo',
             'mensaje': 'Python 1H',
             'boton': 'Ingresar'
+
         })
