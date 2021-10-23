@@ -26,11 +26,15 @@ class UserCreationWithEmail(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['avatar','profesion','biografia','linkedinUrl']
+        fields = ['avatar','profesion','','']
         widgets = {
             'avatar': forms.ClearableFileInput(attrs = {'class':'form-control mt-2'}),
             'profesion': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Profesión u Ocupación'}),
-            'biografia': forms.Textarea(attrs = {'class':'form-control mt-2', 'placeholder':'Biografia y/o Perfil Ocupacional', 'rows':'9'}),
-            'linkedinUrl': forms.URLInput(attrs = {'class':'form-control mt-2', 'placeholder':'LinkedIn Url'}),
-        }
+            'cedula':  forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Profesión u Ocupación'}),
+            'telefono': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Profesión u Ocupación'}),
+            'celular': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Profesión u Ocupación'}),
+            'direccion': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Profesión u Ocupación'}),
+            'genero': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Profesión u Ocupación'}),
+            'fecha_nacimiento': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Profesión u Ocupación'}),
+        }|
 
