@@ -21,7 +21,9 @@ class Profile(models.Model):
     celular = models.CharField(verbose_name="Celular", max_length=20, null=True, blank=True)
     direccion = models.TextField(verbose_name="Dirección", null=True, blank=True)
     genero = models.CharField(verbose_name="Género", choices= Generos, default= "Otro", max_length=10)
-    fecha_nacimiento = models.DateField(auto_now=False, auto_now_add=False, verbose_name= "Fecha de Nacimiento")
+    fecha_nacimiento = models.DateField(auto_now=False, auto_now_add=False, verbose_name= "Fecha de Nacimiento", null= True, blank= True)
+    create_at = models.DateField(auto_now=False, auto_now_add=True, verbose_name="Creado el", null= True, blank= True)
+    modify_at = models.DateField(auto_now=True, auto_now_add=False, verbose_name="Actualizado el", null= True, blank= True)
 
     # Metadata del Modelo:
     class Meta:
