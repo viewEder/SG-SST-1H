@@ -44,7 +44,26 @@
                             <label class="text-primary" for=""><strong>Fecha de nacimiento</strong></label>
                             {{form.fecha_nacimiento}}
                         </div>
-                        
+
+                        <div class="col-8 justificado">
+                            <div class="text-center">
+                                <h4 class="text-info">
+                                    {{ user.username }} 
+                                </h4>
+                            </div>
+    
+                            {% if request.user.profile.avatar %}
+                                <img src="{{ request.user.profile.avatar.url }}" alt="Imagen de Perfil " class="img-fluid">
+                                <br>
+        
+                                <p class="text-center" >
+                                    ¿Borrar Imagen?
+                                    <input type="checkbox" name="avatar-clear" id="avatar-clear">
+                                </p>
+                            {% else %}
+                                <img src="{% static 'media/img/default.png' %}" alt="Imagen de Perfil " class="img-fluid">
+                                {{form.avatar}}
+                            {% endif %}
                             <!-- Accesos a cambio de contraseña y de correo Electrónico -->
                             <hr>
                             {% if user.email %}
