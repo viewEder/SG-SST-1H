@@ -2,5 +2,6 @@
 .env
 /.env
 /_pycache_
+*/_pycache_
 *_pycache_
 _pycache_

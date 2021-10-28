@@ -29,23 +29,39 @@
     
                     <div class="row text-left">
                         <div class="col-8 justificado">
-                            <label class="text-primary" for=""><strong>Descripción de tu Perfil</strong></label>
-                            {{form.biografia}}
                             <label class="text-primary" for=""><strong>Profesión</strong></label>
                             {{form.profesion}}
-                            <label class="text-primary" for=""><strong>Perfil en Linkedin</strong></label>
-                            {{form.linkedinUrl}}
+                            <label class="text-primary" for=""><strong>Cédula</strong></label>
+                            {{form.cedula}}
+                            <label class="text-primary" for=""><strong>Teléfono</strong></label>
+                            {{form.telefono}}
+                            <label class="text-primary" for=""><strong>Celular</strong></label>
+                            {{form.celular}}
+                            <label class="text-primary" for=""><strong>Dirección</strong></label>
+                            {{form.direccion}}
+                            <label class="text-primary" for=""><strong>Género</strong></label>
+                            {{form.genero}}
+                            <label class="text-primary" for=""><strong>Fecha de nacimiento</strong></label>
+                            {{form.fecha_nacimiento}}
                         </div>
-                        <div class="col-4">
+
+                        <div class="col-4 justificado">
+                            <div class="text-center">
+                                <h4 class="text-info">
+                                    {{ user.username }} 
+                                </h4>
+                            </div>
+    
                             {% if request.user.profile.avatar %}
                                 <img src="{{ request.user.profile.avatar.url }}" alt="Imagen de Perfil " class="img-fluid">
                                 <br>
-                                <p class="text-center">
+        
+                                <p class="text-center" >
                                     ¿Borrar Imagen?
                                     <input type="checkbox" name="avatar-clear" id="avatar-clear">
                                 </p>
                             {% else %}
-                                <img src="{% static 'media/img/nouser.png' %}" alt="Imagen de Perfil " class="img-fluid">
+                                <img src="{% static 'media/img/default.png' %}" alt="Imagen de Perfil " class="img-fluid">
                                 {{form.avatar}}
                             {% endif %}
                             <!-- Accesos a cambio de contraseña y de correo Electrónico -->
