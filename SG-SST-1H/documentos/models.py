@@ -9,6 +9,11 @@ def subir_documentos(instance, filename):
     old_instance.path_documento.delete()
     return 'recursos/docsempresa/' + filename
 
+def subir_docuEmpleados(instance, filename):
+    old_instance = DocuEmpleados.objects.get(pk=instance.pk)
+    old_instance.path_documento.delete()
+    return 'recursos/docsempleados/' + filename
+
 # Create your models here.
 
 class TipoDocumento(models.Model):
@@ -45,7 +50,7 @@ class DocuEmpleados(models.Model):
     # atributo de la clase ducumento empresa
     empleado = models.ForeignKey(Empleados, on_delete=CASCADE)
     nombre_documento = models.CharField(verbose_name = "nombre del documento", max_length = 50, null = False)
-    path_documento = models.FileField(upload_to= subir_documentos, null= True, blank= True)
+    path_documento = models.FileField(upload_to= subir_docuEmpleados, null= True, blank= True)
     subido_el = models.DateField(auto_now=False, auto_now_add=True, verbose_name="Subido el")
     create_at = models.DateField(auto_now=False, auto_now_add=True, verbose_name="Creado el") 
     modify_at = models.DateField(auto_now=True, auto_now_add=False, verbose_name="Actualizado el")
