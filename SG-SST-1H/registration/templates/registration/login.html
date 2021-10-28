@@ -9,7 +9,12 @@
     <main class="form-signin align-middle text-center">
         <form action="" method="post">
             {% csrf_token %}
-          <img class="mb-4 img-fluid text-center" src="{% static 'media/img/gitlab.png' %}" alt="" width="72" height="57">
+          <div class="row">
+            <div class="text-center">
+              <img class="mb-2 img-fluid text-center" src="{% static 'media/img/logo ssg 1h.gif' %}" alt="" width="170px" class="img-fluid col-2">
+            </div>
+          </div>
+          
           <h1 class="h3 mb-3 fw-normal">Inicie Sesión</h1>
             {% if form.non_field_errors %}
                 <div class="alert alert-danger" role="alert">
