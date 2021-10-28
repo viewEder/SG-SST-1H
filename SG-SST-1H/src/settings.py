@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',                 # Inscribimos la app core para la gestión de las vistas
+<<<<<<< HEAD
     #'empresa',
+=======
+    'empresa',
+>>>>>>> e481dcfd1661291d172bdf66bca1faa4de18a78b
     #'documentos',
     #'formatos',
     #'comites',
@@ -142,3 +146,5 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_REDIRECT_URL = "/"
