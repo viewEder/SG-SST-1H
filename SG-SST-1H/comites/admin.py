@@ -3,3 +3,5 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Comites)
+admin.site.register(RolComite)
+admin.site.register(ParticipanteComite)
