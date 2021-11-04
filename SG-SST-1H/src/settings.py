@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'empresa',
     'documentos',
     #'formatos',
-    #'comites',
+    'comites',
 ]
 
 MIDDLEWARE = [
