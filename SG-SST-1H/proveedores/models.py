@@ -14,11 +14,11 @@ class Proveedores(models.Model):
     es_autorizado = models.BooleanField(default= False, verbose_name= "Se encuentra autorizado o no", null= False)
     seguridad_social = models.CharField(max_length = 50, verbose_name = "EPS", null = False)
     ficha_seguridad_social = models.CharField(max_length = 256, verbose_name = "Ficha seguridad social", null = False)
-    teléfono1 = models.CharField(max_length = 40, verbose_name = "Número telefónico 1", null = False)
-    teléfono2 = models.CharField(max_length = 40, verbose_name = "Número telefónico 2", null = False)
+    telefono1 = models.CharField(max_length = 40, verbose_name = "Número telefónico 1", null = False)
+    telefono2 = models.CharField(max_length = 40, verbose_name = "Número telefónico 2", null = False)
     email = models.CharField(max_length = 50, verbose_name = "Email", null = False)
     activo = models.BooleanField(default= False, verbose_name= "Se encuentra activo o no", null= False)
-    fecha_creación = models.DateField(verbose_name = "Fecha de creación", auto_now = False, auto_now_add = False)
+    fecha_creacion = models.DateField(verbose_name = "Fecha de creación", auto_now = False, auto_now_add = False)
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
     
@@ -36,7 +36,7 @@ class Elementos(models.Model):
     # Atributo de la clase elementos
     id_elemento = models.CharField(max_length = 30, verbose_name = "ID elemento", null = True)
     nombre_elemento = models.CharField(max_length = 100, verbose_name = "Nombre del elemento", null = False)
-    fecha_creación = models.DateField(verbose_name = "Fecha de creación", auto_now = False, auto_now_add = False)
+    fecha_creacion = models.DateField(verbose_name = "Fecha de creación", auto_now = False, auto_now_add = False)
     activo = models.BooleanField(default= False, verbose_name= "Se encuentra activo o no", null= False)
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
@@ -53,10 +53,10 @@ class DetalleElementos(models.Model):
     # Atributo de la clase Detalle elementos
     id_proveedor = models.CharField(max_length = 30, verbose_name = "ID proveedor", null = True)
     id_elemento = models.CharField(max_length = 30, verbose_name = "ID elemento", null = True)
-    descripción = models.CharField(max_length = 256, verbose_name = "Descripción del elemento", null = False)
+    descripcion = models.CharField(max_length = 256, verbose_name = "Descripción del elemento", null = False)
     vida_útil = models.CharField(max_length = 30, verbose_name = "Vida útil", null = True)
     activo = models.BooleanField(default= False, verbose_name= "Se encuentra activo o no", null= False)
-    fecha_creación = models.DateField(verbose_name = "Fecha de creación", auto_now = False, auto_now_add = False)
+    fecha_creacion = models.DateField(verbose_name = "Fecha de creación", auto_now = False, auto_now_add = False)
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
 
@@ -66,7 +66,7 @@ class DetalleElementos(models.Model):
         
     # Método string que devuelve los detalles de los elementos
     def __str__(self):
-        return self.descripción
+        return self.descripcion
 
     
 
