@@ -4,5 +4,5 @@ from django.urls.resolvers import URLPattern
 from .views import ProfileUpdate
 
 urlpatterns = [ 
-    path("profile/", ProfileUpdate.as_view(),name= "perfil"),
+    path("profile/", ProfileUpdate.as_view(),name= "profile"),
  ]
