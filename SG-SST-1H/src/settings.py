@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'core',                 # Inscribimos la app core para la gestión de las vistas
     'empresa',
     'documentos',
+    'proveedores',
     #'formatos',
     'comites',
     #'cronograma',
