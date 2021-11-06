@@ -7,7 +7,7 @@ from django.db.models import CASCADE
 
 class Periodo(models.Model):
 
-    anio = models.CharField(Verbose_name = "Año", max_length= 4, null= False)
+    anio = models.CharField(verbose_name = "Año", max_length= 4, null= False)
 
     class Meta:
         verbose_name = "Periodo"
@@ -55,4 +55,4 @@ class Ejecucion(models.Model):
         verbose_name = "Ejecucion"
         
     def __str__(self):
-        return self.periodo
+        return self.total_ejecucion
