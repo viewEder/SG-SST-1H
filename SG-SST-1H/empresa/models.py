@@ -97,3 +97,40 @@ class Empleados (models.Model):
     # Método string que devuelve el nombre de los empleados
     def __str__(self):
         return self.id_empleado
+    
+# Modelo capacitaciones 
+class Capacitaciones(models.Model):
+    empleado = models.ForeignKey(Empleados,on_delete=models.CASCADE)
+    nombre_capacitacion = models.CharField(verbose_name="Nombre de la capacitación", max_length=400, null = False)
+    certificado = models.CharField(verbose_name="Tiene certificado?", max_length=2)
+
+# Modelo Sanidad
+class Sanidad(models.Model):
+    enfermedad = models.CharField(verbose_name="Tipo de Enfermedad",max_length=255)
+    pandemia = models.CharField(verbose_name="Es Pandemia?", max_length=2)
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el")
+    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")    
+
+    class Meta:
+        verbose_name = 'Sanidad (COVID-19 u otras)'
+        verbose_name_plural = 'Sanidades (COVID-19 u otras)'
+
+    def __str__(self):
+        return f'{self.enfermedad}'
+
+# Modelo detalle sanidad
+class DetalleSanidad(models.Model):
+    empleado = models.ForeignKey(Empleados,on_delete=models.CASCADE)
+    enfermedad = models.ForeignKey(Sanidad, on_delete=models.CASCADE)
+    vacuna = models.CharField(verbose_name="Vacuna", max_length=144)
+    dosis = models.IntegerField(verbose_name="Número de dosis", null=True, blank=True)
+    fecha_dosis = models.DateField(verbose_name="Fecha de aplicación", auto_now=False)
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el")
+    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
+
+    class Meta:
+        verbose_name = 'Detalle tratamiento'
+        verbose_name_plural = 'Detalle tratamientos'
+
+    def __str__(self):
+        return f'{self.empleado}'
