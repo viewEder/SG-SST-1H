@@ -31,20 +31,38 @@
         
                         <div class="row text-left">
                             <div class="col-8 justificado">
-                                <label class="text-primary" for=""><strong>Profesión</strong></label>
-                                {{form.profesion}}
-                                <label class="text-primary" for=""><strong>Cédula</strong></label>
-                                {{form.cedula}}
-                                <label class="text-primary" for=""><strong>Teléfono</strong></label>
-                                {{form.telefono}}
-                                <label class="text-primary" for=""><strong>Celular</strong></label>
-                                {{form.celular}}
-                                <label class="text-primary" for=""><strong>Dirección</strong></label>
-                                {{form.direccion}}
-                                <label class="text-primary" for=""><strong>Género</strong></label>
-                                {{form.genero}}
-                                <label class="text-primary" for=""><strong>Fecha de nacimiento</strong></label>
-                                {{form.fecha_nacimiento}}
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="text-primary mt-2" for=""><strong>Cédula</strong></label>
+                                        {{form.cedula}}
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="text-primary mt-2" for=""><strong>Profesión</strong></label>
+                                        {{form.profesion}}
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="text-primary mt-2" for=""><strong>Teléfono</strong></label>
+                                        {{form.telefono}}
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="text-primary mt-2" for=""><strong>Celular</strong></label>
+                                        {{form.celular}}
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="text-primary" for=""><strong>Género</strong></label>
+                                        {{form.genero}}
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="text-primary" for=""><strong>Fecha de nacimiento</strong></label>
+                                        {{form.fecha_nacimiento}}
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="text-primary" for=""><strong>Dirección</strong></label>
+                                        {{form.direccion}}
+                                    </div>
+                                </div>
+
+
                             </div>
 
                             <div class="col-4 justificado">
@@ -78,7 +96,7 @@
                                 <a type="button" class="btn btn-outline-info col-12">Cambiar Contraseña</a>
                             </div>
                         </div>                   
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                             <button class="btn btn-danger me-md-2" type="reset">Cancelar</button>
                             <button class="btn btn-primary" type="submit">Actualizar</button>
                         </div>
