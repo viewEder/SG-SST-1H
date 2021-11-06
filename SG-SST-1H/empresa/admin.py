@@ -8,4 +8,7 @@ admin.site.register(Empleados)
 admin.site.register(Empresa)
 admin.site.register(Cargos)
 admin.site.register(NivelAcademico)
+admin.site.register(Capacitaciones)
+admin.site.register(Sanidad)
+admin.site.register(DetalleSanidad)
 

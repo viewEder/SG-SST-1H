@@ -14,13 +14,19 @@
                     Esta información corresponde a la presentación que tendremos dentro del aplicativo. Otros usuarios pueden ver esta información
                     y tomar la decisión de contactarte.
                 </strong></p>
-                <p class="text-light"><small>
+                <!-- <p class="text-light"><small>
                     {% if request.user.first_name %}
                         {{user.first_name}}
                     {% else %}
                         {{user.username}}
                     {% endif %}
-                </small></p>
+                </small></p> -->
+                <hr class="">
+                <div class="col">
+                    <div class="nav-wrapper bg-warning">
+                        <h4 class="bg-light">Operaciones</h4>
+                    </div>
+                </div>
             </div>
             
             <div class="col-9 mt-3">
@@ -49,16 +55,20 @@
                                         {{form.celular}}
                                     </div>
                                     <div class="col-6">
-                                        <label class="text-primary" for=""><strong>Género</strong></label>
+                                        <label class="text-primary mt-2" for=""><strong>Género</strong></label>
                                         {{form.genero}}
                                     </div>
                                     <div class="col-6">
-                                        <label class="text-primary" for=""><strong>Fecha de nacimiento</strong></label>
+                                        <label class="text-primary mt-2" for=""><strong>Fecha de nacimiento</strong></label>
                                         {{form.fecha_nacimiento}}
                                     </div>
                                     <div class="col-12">
-                                        <label class="text-primary" for=""><strong>Dirección</strong></label>
+                                        <label class="text-primary mt-2" for=""><strong>Dirección</strong></label>
                                         {{form.direccion}}
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="text-primary mt-2" for=""><strong>Salario Dia</strong></label>
+                                        <input type="number" class="form-control" id="salario_dia" value="" >
                                     </div>
                                 </div>
 
