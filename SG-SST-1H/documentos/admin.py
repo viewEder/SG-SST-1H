@@ -5,3 +5,4 @@ from .models import *
 admin.site.register (TipoDocumento)
 admin.site.register (DocuEmpresa)
 admin.site.register (DocuEmpleados)
+admin.site.register (DocsComite)
