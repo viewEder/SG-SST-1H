@@ -47,8 +47,8 @@ class DocuEmpresa(models.Model):
 
     
     class Meta:
-        verbose_name = "Nombre documento"
-        verbose_name_plural = "Nombre documentos"
+        verbose_name = "Documento Empresa"
+        verbose_name_plural = "Documentos Empresas"
         
     def __str__(self) -> str:
         return self.nombre_documento
@@ -64,8 +64,8 @@ class DocuEmpleados(models.Model):
 
     
     class Meta:
-        verbose_name = "Nombre documento empleado"
-        verbose_name_plural = "Nombre documentos empleados"
+        verbose_name = "Documento empleado"
+        verbose_name_plural = "Documentos empleados"
         
     def __str__(self) -> str:
         return self.nombre_documento
@@ -81,8 +81,8 @@ class DocsComite(models.Model):
 
     
     class Meta:
-        verbose_name = "Nombre documento comite"
-        verbose_name_plural = "Nombre documentos comites"
+        verbose_name = "Documento comite"
+        verbose_name_plural = "Documentos comites"
         
     def __str__(self) -> str:
         return self.nombre_documento
