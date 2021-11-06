@@ -5,6 +5,16 @@
 {% block contenido %}
     {% load static %}
 
+    <script>
+        function salario(){
+            const salario = document.getElementById('id_telefono').value;
+            console.log(salario);
+            let dia = salario / 300 ;
+            console.log(dia)
+            document.getElementById('salario_dia').innerHTML = dia;
+        }
+    </script>
+
     <section class="container-fluid">
         <div class="row">
             <div class="col-3 text-center bg-dark">
@@ -68,7 +78,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label class="text-primary mt-2" for=""><strong>Salario Dia</strong></label>
-                                        <input type="number" readonly class="form-control" id="salario_dia" value="" >
+                                        <input type="number" class="form-control" id="salario_dia" value="" >
                                     </div>
                                 </div>
 
