@@ -34,7 +34,7 @@ class ProfileForm(forms.ModelForm):
             'telefono': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Teléfono'}),
             'celular': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Celular'}),
             'direccion': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Dirección'}),
-            'genero': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Género'}),
-            'fecha_nacimiento': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Fecha de nacimiento'}),
+            'genero': forms.Select(attrs = {'class':'form-control mt-2'}),
+            'fecha_nacimiento': forms.DateInput(format=('%Y-%m-%d'), attrs = {'class':'form-control mt-2', 'type':'date', 'placeholder':'Fecha de nacimiento'}),
         }
 

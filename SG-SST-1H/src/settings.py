@@ -41,9 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',                 # Inscribimos la app core para la gestión de las vistas
     'empresa',
-    #'documentos',
+    'documentos',
+    'proveedores',
     #'formatos',
-    #'comites',
+    'comites',
 ]
 
 MIDDLEWARE = [

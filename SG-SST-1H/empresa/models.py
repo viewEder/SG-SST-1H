@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import CASCADE
+from core.types.sino import SiNo
  
 # Create your models here.
 
@@ -102,7 +103,7 @@ class Empleados (models.Model):
 class Capacitaciones(models.Model):
     empleado = models.ForeignKey(Empleados,on_delete=models.CASCADE)
     nombre_capacitacion = models.CharField(verbose_name="Nombre de la capacitación", max_length=400, null = False)
-    certificado = models.CharField(verbose_name="Tiene certificado?", max_length=2)
+    certificado = models.CharField(verbose_name="Tiene certificado?",choices=SiNo, max_length=2)
 
 # Modelo Sanidad
 class Sanidad(models.Model):

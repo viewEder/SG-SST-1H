@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 from django.dispatch import receiver            # Libreria para hacer los cambios en los datos
 from django.db.models.signals import post_save  # Complemento de dispatch
-from core.generos import Generos
+from core.types.generos import Generos
+from core.types.parentesco import Parentesco
 
 # Función para cargar información tipo media: Imagenes de perfil:
 def custom_upload_to(instance, filename):
@@ -20,8 +21,11 @@ class Profile(models.Model):
     telefono = models.CharField(verbose_name="Teléfono", max_length=20, null=True, blank=True)
     celular = models.CharField(verbose_name="Celular", max_length=20, null=True, blank=True)
     direccion = models.TextField(verbose_name="Dirección", null=True, blank=True)
-    genero = models.CharField(verbose_name="Género", choices= Generos, default= "Otro", max_length=10)
-    fecha_nacimiento = models.DateField(auto_now=False, auto_now_add=False, verbose_name= "Fecha de Nacimiento")
+    genero = models.CharField(verbose_name="Género", choices= Generos, max_length=20, default= "Otro")
+    fecha_nacimiento = models.DateField(auto_now=False, auto_now_add=False, verbose_name= "Fecha de Nacimiento", null=True, blank=True)
+    create_at = models.DateField(auto_now=False, auto_now_add=True, verbose_name="Creado el", null=True, blank=True) 
+    modify_at = models.DateField(auto_now=True, auto_now_add=False, verbose_name="Actualizado el", null=True, blank=True)
+
 
     # Metadata del Modelo:
     class Meta:
@@ -29,7 +33,22 @@ class Profile(models.Model):
         verbose_name_plural = 'Perfiles de Usuario'
         ordering = ['usuario__username']
 
-# Función exclusiva para los usuarios logueados:
+
+class Contacto_Emergencia(models.Model):
+    usuario = models.ForeignKey(User, on_delete=CASCADE)
+    contacto_emergencia = models.CharField(max_length=255, verbose_name="Contacto Emergencia", null=True, blank=True)
+    parentesco_emergercia = models.CharField(max_length=20, choices= Parentesco,verbose_name="Parentesco", null=True, blank=True)
+    telefono_emergencia = models.CharField(max_length=20, verbose_name="Telefono Emergencia", null=True, blank=True)
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)  
+    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
+
+    class Meta:
+        ordering = ['usuario__username']
+    
+    def __str__(self):
+        return self.usuario
+
+    # Función exclusiva para los usuarios logueados:
 @receiver(post_save, sender=User)
 def ensure_profile_exists(sender, instance, **kwargs):
     if kwargs.get('created', False):
