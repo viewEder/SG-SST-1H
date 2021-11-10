@@ -39,7 +39,7 @@ class Elementos(models.Model):
     id_elemento = models.CharField(max_length = 30, verbose_name = "ID elemento", null = True)
     nombre_elemento = models.CharField(max_length = 100, verbose_name = "Nombre del elemento", null = False)
     fecha_creacion = models.DateField(verbose_name = "Fecha de creación", auto_now = False, auto_now_add = False)
-    activo = models.BooleanField(default= False, verbose_name= "Se encuentra activo o no", null= False)
+    activo = models.CharField(verbose_name= "Se encuentra activo?", choices= SiNo, max_length= 2)
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
 
