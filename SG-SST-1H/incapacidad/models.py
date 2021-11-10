@@ -24,7 +24,14 @@ class Ausentismo(models.Models):
     #valor asumido por la empresa
     #Valor asumido por eps
 
-    
+    class Meta:
+        verbose_name = "Ausentismo"
+                
+    # Método string que devuelve el diagnostico
+    def __str__(self):
+        return self.diagnostico
+
+
     
 
 

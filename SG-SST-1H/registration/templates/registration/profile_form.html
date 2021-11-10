@@ -14,13 +14,19 @@
                     Esta información corresponde a la presentación que tendremos dentro del aplicativo. Otros usuarios pueden ver esta información
                     y tomar la decisión de contactarte.
                 </strong></p>
-                <p class="text-light"><small>
+                <!-- <p class="text-light"><small>
                     {% if request.user.first_name %}
                         {{user.first_name}}
                     {% else %}
                         {{user.username}}
                     {% endif %}
-                </small></p>
+                </small></p> -->
+                <hr class="">
+                <div class="col">
+                    <div class="nav-wrapper bg-warning">
+                        <h4 class="bg-light">Operaciones</h4>
+                    </div>
+                </div>
             </div>
             
             <div class="col-9 mt-3">
@@ -31,20 +37,42 @@
         
                         <div class="row text-left">
                             <div class="col-8 justificado">
-                                <label class="text-primary" for=""><strong>Profesión</strong></label>
-                                {{form.profesion}}
-                                <label class="text-primary" for=""><strong>Cédula</strong></label>
-                                {{form.cedula}}
-                                <label class="text-primary" for=""><strong>Teléfono</strong></label>
-                                {{form.telefono}}
-                                <label class="text-primary" for=""><strong>Celular</strong></label>
-                                {{form.celular}}
-                                <label class="text-primary" for=""><strong>Dirección</strong></label>
-                                {{form.direccion}}
-                                <label class="text-primary" for=""><strong>Género</strong></label>
-                                {{form.genero}}
-                                <label class="text-primary" for=""><strong>Fecha de nacimiento</strong></label>
-                                {{form.fecha_nacimiento}}
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="text-primary mt-2" for=""><strong>Cédula</strong></label>
+                                        {{form.cedula}}
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="text-primary mt-2" for=""><strong>Profesión</strong></label>
+                                        {{form.profesion}}
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="text-primary mt-2" for=""><strong>Teléfono</strong></label>
+                                        {{form.telefono}}
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="text-primary mt-2" for=""><strong>Celular</strong></label>
+                                        {{form.celular}}
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="text-primary mt-2" for=""><strong>Género</strong></label>
+                                        {{form.genero}}
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="text-primary mt-2" for=""><strong>Fecha de nacimiento</strong></label>
+                                        {{form.fecha_nacimiento}}
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="text-primary mt-2" for=""><strong>Dirección</strong></label>
+                                        {{form.direccion}}
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="text-primary mt-2" for=""><strong>Salario Dia</strong></label>
+                                        <input type="number" class="form-control" id="salario_dia" value="" >
+                                    </div>
+                                </div>
+
+
                             </div>
 
                             <div class="col-4 justificado">
@@ -78,7 +106,7 @@
                                 <a type="button" class="btn btn-outline-info col-12">Cambiar Contraseña</a>
                             </div>
                         </div>                   
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                             <button class="btn btn-danger me-md-2" type="reset">Cancelar</button>
                             <button class="btn btn-primary" type="submit">Actualizar</button>
                         </div>
