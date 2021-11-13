@@ -18,8 +18,8 @@ class DocuEmpresaAdmin(admin.ModelAdmin):
     reandoly_fields =('create_at', 'modify_at')
     list_display = ('empresa','nombre_documento',)
     ordering = ('empresa', 'nombre_documento')
-    list_filter = ('nombre_documento', )
-    search_fields = ('nombre_documento',)
+    list_filter = ('empresa', )
+    search_fields = ('empresa',)
 class Meta:
     model = (DocuEmpresa)
 
@@ -28,14 +28,24 @@ admin.site.register (DocuEmpresa, DocuEmpresaAdmin)
 
 class DocuEmpleadosAdmin(admin.ModelAdmin):
     reandoly_fields =('create_at', 'modify_at')
-    list_display = ('empresa','nombre_documento')
-    ordering = ('empresa', 'nombre_documento',)
-    list_filter = ('nombre_documento', )
-    search_fields = ('nombre_documento', )
+    list_display = ('empleado','tipo_documento','nombre_documento')
+    ordering = ('empleado', 'nombre_documento',)
+    list_filter = ('empleado', )
+    search_fields = ('empleado', )
 
 class Meta:
-    model = (DocuEmpresa, DocuEmpleadosAdmin)
+    model = (DocuEmpleados)
 
+admin.site.register (DocuEmpleados, DocuEmpleadosAdmin)
 
-admin.site.register (DocuEmpleados)
-admin.site.register (DocsComite)
+class DocsComiteAdmin(admin.ModelAdmin):
+    reandoly_fields =('create_at', 'modify_at')
+    list_display = ('comite','tipo_documento','nombre_documento')
+    ordering = ('comite', 'nombre_documento',)
+    list_filter = ('comite', )
+    search_fields = ('comite', )
+
+class Meta:
+    model = (DocsComite)
+
+admin.site.register (DocsComite, DocsComiteAdmin)
