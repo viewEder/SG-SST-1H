@@ -6,8 +6,8 @@ from comites.models import Comites
 # funcion para subir documentos
 
 def subir_documentos(instance, filename):
-    old_instance = DocuEmpresa.objects.get(pk=instance.pk)
-    old_instance.path_documento.delete()
+    #old_instance = DocuEmpresa.objects.get(pk=instance.pk)
+    #old_instance.path_documento.delete()
     return 'recursos/docsempresa/' + filename
 
 def subir_docuEmpleados(instance, filename):
