@@ -55,13 +55,13 @@
                       {% endif %}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                      <li><button class="dropdown-item" type="button">
-                        <i class="fas fa-user-edit"></i>&nbsp;Perfil de {{ request.user.first_name }}
-                        </button>
+                      <li><a class="dropdown-item text-dark" href="{% url 'profile' %}">
+                        <i class="fas fa-user-edit text-primary"></i>&nbsp;Perfil de {{ request.user.first_name }}
+                        </a>
                       </li>
                       <div class="divider"></div>
                       <li><a class="dropdown-item text-dark" href="{% url 'logout' %}">
-                        <i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar Sesión
+                        <i class="fas fa-sign-out-alt text-primary"></i>&nbsp;Cerrar Sesión
                           </a>
                       </li>
                     </ul>
