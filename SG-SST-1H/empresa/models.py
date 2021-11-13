@@ -114,7 +114,7 @@ class Sanidad(models.Model):
 
     class Meta:
         verbose_name = 'Sanidad (COVID-19 u otras)'
-        verbose_name_plural = 'Sanidades (COVID-19 u otras)'
+        verbose_name_plural = 'Sanidad (COVID-19 u otras)'
 
     def __str__(self):
         return f'{self.enfermedad}'
@@ -131,7 +131,7 @@ class DetalleSanidad(models.Model):
 
     class Meta:
         verbose_name = 'Detalle tratamiento'
-        verbose_name_plural = 'Detalle tratamientos'
+        verbose_name_plural = 'Sanidad - Detalle tratamientos'
 
     def __str__(self):
         return f'{self.empleado}'
