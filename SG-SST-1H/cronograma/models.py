@@ -1,10 +1,11 @@
 from django.db import models
 from empresa.models import Empleados
 from proveedores.models import Proveedores
-from django.db.models import CASCADE
+from django.db.models.deletion import CASCADE
 
 # Create your models here.
 
+#Modelo Periodo
 class Periodo(models.Model):
 
     anio = models.CharField(verbose_name = "Año", max_length= 4, null= False)
@@ -16,11 +17,10 @@ class Periodo(models.Model):
     def __str__(self):
         return self.anio
 
-class Cronograma(models.Model):
-    # atributos de la clase Cronograma
+# Modelo Cronograma del Presupuesto
+class CronogramaPresupuesto(models.Model):
 
    periodo = models.OneToOneField(Periodo, on_delete=models.CASCADE)
-   nombre_cronograma = models.CharField(verbose_name="Cronograma", max_length=50)
    empleado = models.ForeignKey(Empleados, on_delete=models.CASCADE )
    actividad = models.CharField(verbose_name="Actividad", max_length=100, null = False)
    observaciones = models.TextField(verbose_name="Observaciones", null = True, blank= True)
@@ -34,15 +34,16 @@ class Cronograma(models.Model):
         verbose_name_plural = "Cronogramas" 
 
    def __str__(self):
-        return self.nombre_cronograma
+        return self.actividad
 
-class Ejecucion(models.Model):
+#Modelo Ejecucion del presupuesto
+class EjecucionPresupuesto(models.Model):
 
-    cronograma = models.ForeignKey(Cronograma, on_delete=models.CASCADE)
+    cronograma = models.ForeignKey(CronogramaPresupuesto, on_delete=models.CASCADE)
     proveedor = models.ForeignKey(Proveedores, on_delete=models.CASCADE)
     fecha = models.DateField(verbose_name="Fecha", null=True)
     numero_factura = models.CharField(verbose_name="Número de factura", max_length=20, null = False)
-    actividad = models.CharField(verbose_name="Actividad", max_length=250, null = False)
+    id_actividad = models.DecimalField(verbose_name="id Actividad", max_digits= 2)
     cantidad = models.CharField(verbose_name="cantidad", max_length=250, null = False)
     valor_unitario = models.DecimalField(verbose_name="Valor Unitario", max_digits= 15, decimal_places= 2)
     valor_iva = models.DecimalField(verbose_name="Valor IVA", max_digits= 15, decimal_places= 2)
@@ -55,4 +56,4 @@ class Ejecucion(models.Model):
         verbose_name = "Ejecucion"
         
     def __str__(self):
-        return self.total_ejecucion
+        return self.actividad
