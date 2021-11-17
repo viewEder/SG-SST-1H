@@ -3,16 +3,18 @@ from django.contrib.auth.models import User
 from django.db.models import CASCADE
 from core.types.sino import SiNo
  
-# Create your models here.
+# Create your models here.    
 
 # Modelo tipo de empresa
 class TipoEmpresa(models.Model):
     # atributo de la clase tipo de empresa
     nombre_tipo = models.CharField(verbose_name = "Tipo de empresa", max_length = 150, null = False)
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
+    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
     
     class Meta:
         verbose_name = "Tipo de empresa"
-        verbose_name_plural = "Tipo de empresas"
+        verbose_name_plural = "Tipo de empresa"
  
     # Método string que devuelve el nombre de tipo de empresa
     def __str__(self):
@@ -30,9 +32,12 @@ class Empresa (models.Model):
     correo_electronico = models.CharField(max_length = 25, verbose_name = "Correo electrónico", null = False)
     tipo_de_empresa = models.CharField(max_length = 25, verbose_name = "Tipo de empresa", null = False)
     numeros_telefonicos = models.CharField(max_length = 40, verbose_name = "Números telefónicos", null = False)
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
+    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
     
     class Meta:
         verbose_name = "Empresa"
+        verbose_name_plural = "Empresa"
     
     # Método string que devuelve el nombre de la empresa
     def __str__(self):
@@ -43,6 +48,8 @@ class Areas (models.Model):
     # atributo de la clase área
     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
     nombre_area = models.CharField(max_length = 150, verbose_name = "Área", null = False)
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
+    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
     
     class Meta:
         verbose_name = "Área"
@@ -56,6 +63,8 @@ class Areas (models.Model):
 class Cargos (models.Model):
     cargo = models.CharField(max_length = 150, verbose_name = "Cargo", null = False)
     salario_cargo = models.DecimalField(verbose_name = "Salario del cargo",max_digits = 10, decimal_places = 2)
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
+    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
     
     class Meta:
         verbose_name = "Cargo"
@@ -68,6 +77,8 @@ class Cargos (models.Model):
 # Modelo nivel académico
 class NivelAcademico (models.Model):
     nivel_academico = models.CharField(max_length = 40, verbose_name = "Nivel Acedémico", null = False)
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
+    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
     
     class Meta:
         verbose_name = "Nivel académico"
@@ -90,6 +101,8 @@ class Empleados (models.Model):
     eps = models.CharField(max_length = 100, verbose_name = "EPS", null = False)
     arl = models.CharField(max_length = 100, verbose_name = "ARL", null = False)
     cuenta_bancaria = models.CharField(max_length = 30, verbose_name = "Número de cuenta bancaria",null = True )
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
+    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
     
     class Meta:
         verbose_name = "Empleado"
@@ -104,17 +117,19 @@ class Capacitaciones(models.Model):
     empleado = models.ForeignKey(Empleados,on_delete=models.CASCADE)
     nombre_capacitacion = models.CharField(verbose_name="Nombre de la capacitación", max_length=400, null = False)
     certificado = models.CharField(verbose_name="Tiene certificado?",choices=SiNo, max_length=2)
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
+    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
 
 # Modelo Sanidad
 class Sanidad(models.Model):
     enfermedad = models.CharField(verbose_name="Tipo de Enfermedad",max_length=255)
     pandemia = models.CharField(verbose_name="Es Pandemia?", max_length=2)
-    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el")
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")    
 
     class Meta:
         verbose_name = 'Sanidad (COVID-19 u otras)'
-        verbose_name_plural = 'Sanidades (COVID-19 u otras)'
+        verbose_name_plural = 'Sanidad (COVID-19 u otras)'
 
     def __str__(self):
         return f'{self.enfermedad}'
@@ -126,12 +141,12 @@ class DetalleSanidad(models.Model):
     vacuna = models.CharField(verbose_name="Vacuna", max_length=144)
     dosis = models.IntegerField(verbose_name="Número de dosis", null=True, blank=True)
     fecha_dosis = models.DateField(verbose_name="Fecha de aplicación", auto_now=False)
-    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el")
+    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
 
     class Meta:
-        verbose_name = 'Detalle tratamiento'
-        verbose_name_plural = 'Detalle tratamientos'
+        verbose_name = 'Sanidad - Detalle tratamiento'
+        verbose_name_plural = 'Sanidad - Detalle tratamientos'
 
     def __str__(self):
         return f'{self.empleado}'
