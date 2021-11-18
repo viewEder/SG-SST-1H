@@ -38,8 +38,7 @@ class RolComite(models.Model):
 class ParticipanteComite(models.Model):    
     empleado = models.ForeignKey(Empleados, on_delete=CASCADE)
     cargo = models.ForeignKey(Cargos, on_delete=models.CASCADE)
-    rol_comite = models.CharField(verbose_name="Rol Comite", max_length=50)
-    participantes_comite= models.CharField(verbose_name="Participante comite", max_length=60)
+    rol_comite = models.ForeignKey(RolComite, on_delete=CASCADE, default=1)
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
 
