@@ -98,9 +98,9 @@ class Empleados (models.Model):
     id_empleado = models.CharField(max_length = 30, verbose_name = "ID empleado", null = True)
     fecha_ingreso = models.DateField(verbose_name = "Fecha de ingreso", auto_now = False, auto_now_add = False)
     sueldo = models.DecimalField(verbose_name = "Sueldo", max_digits = 12, decimal_places = 2)
-    eps = models.CharField(max_length = 100, verbose_name = "EPS", null = False)
-    arl = models.CharField(max_length = 100, verbose_name = "ARL", null = False)
-    afp = models.CharField(max_length = 100, verbose_name = "AFP", null = False)
+    eps = models.CharField(max_length = 100, verbose_name = "EPS", default="N/A", null = False)
+    arl = models.CharField(max_length = 100, verbose_name = "ARL", default="N/A", null = False)
+    afp = models.CharField(max_length = 100, verbose_name = "AFP", default="N/A", null = False)
     cuenta_bancaria = models.CharField(max_length = 30, verbose_name = "Número de cuenta bancaria",null = True )
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
@@ -117,7 +117,7 @@ class Empleados (models.Model):
 class Capacitaciones(models.Model):
     empleado = models.ForeignKey(Empleados,on_delete=models.CASCADE)
     nombre_capacitacion = models.CharField(verbose_name="Nombre de la capacitación", max_length=400, null = False)
-    certificado = models.CharField(verbose_name="Tiene certificado?",choices=SiNo, max_length=2)
+    certificado = models.CharField(verbose_name="Tiene certificado?", choices=SiNo, max_length=2)
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
 
