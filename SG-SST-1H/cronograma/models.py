@@ -43,7 +43,7 @@ class EjecucionPresupuesto(models.Model):
     proveedor = models.ForeignKey(Proveedores, on_delete=models.CASCADE)
     fecha = models.DateField(verbose_name="Fecha", null=True)
     numero_factura = models.CharField(verbose_name="Número de factura", max_length=20, null = False)
-    id_actividad = models.DecimalField(verbose_name="id Actividad", max_digits= 2)
+    #id_actividad = models.DecimalField(verbose_name="id Actividad", max_digits= 2)
     cantidad = models.CharField(verbose_name="cantidad", max_length=250, null = False)
     valor_unitario = models.DecimalField(verbose_name="Valor Unitario", max_digits= 15, decimal_places= 2)
     valor_iva = models.DecimalField(verbose_name="Valor IVA", max_digits= 15, decimal_places= 2)
