@@ -25,7 +25,11 @@ class EmpleadosAdmin(admin.ModelAdmin):
     readonly_fields = ('create_at', 'modify_at')  # no permite modificar estos campos
     list_display = ('usuario', 'cargo', 'id_empleado', 'eps', 'arl')
     ordering = ('usuario', 'fecha_ingreso', 'area')
+<<<<<<< HEAD
     list_filter = ('usuario','fecha_ingreso', 'cargo')
+=======
+    list_filter = ('usuario','fecha_ingreso')
+>>>>>>> c6abef1dcc93a8a7ad7a36323723dc46cb398ab5
     search_fields = ('usuario','cargo')
     
 admin.site.register(Empleados, EmpleadosAdmin)
