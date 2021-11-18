@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'formatos',
     'comites',
     'cronograma',
+    'planAnual'
 ]
 
 MIDDLEWARE = [

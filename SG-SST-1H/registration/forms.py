@@ -3,7 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.db.models import fields
 from django.forms import widgets
-from .models import Profile
+from .models import Profile, ContactoEmergencia
+
 
 # Formulario para validar email ya registrado::
 class UserCreationWithEmail(UserCreationForm):
@@ -38,3 +39,15 @@ class ProfileForm(forms.ModelForm):
             'fecha_nacimiento': forms.DateInput(format=('%Y-%m-%d'), attrs = {'class':'form-control mt-2', 'type':'date', 'placeholder':'Fecha de nacimiento'}),
         }
 
+# Clase para el formulario de contacto de emergencia
+class ContactoEmergenciaForm(forms.ModelForm):
+    class Meta:
+        model = ContactoEmergencia
+        fields = ['usuario','contacto_emergencia','parentesco_emergencia','telefono_emergencia']
+        widgets = {
+            'usuario': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'usuario'}),
+            'contacto_emergencia':  forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Contacto de Emergencia'}),
+            'parentesco_emergencia': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Parentesco Emergencia'}),
+            'telefono_emergencia': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Teléfono de Emergencia'}),
+            
+        }

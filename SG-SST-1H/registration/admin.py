@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Contacto_Emergencia
+from .models import *
 
 # Register your models here.
-admin.site.register(Contacto_Emergencia)
+admin.site.register(ContactoEmergencia)
+
