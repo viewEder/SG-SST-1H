@@ -34,10 +34,10 @@ class Profile(models.Model):
         ordering = ['usuario__username']
 
 
-class Contacto_Emergencia(models.Model):
+class ContactoEmergencia(models.Model):
     usuario = models.ForeignKey(User, on_delete=CASCADE)
     contacto_emergencia = models.CharField(max_length=255, verbose_name="Contacto Emergencia", null=True, blank=True)
-    parentesco_emergercia = models.CharField(max_length=20, choices= Parentesco,verbose_name="Parentesco", null=True, blank=True)
+    parentesco_emergencia = models.CharField(max_length=20, choices= Parentesco,verbose_name="Parentesco", null=True, blank=True)
     telefono_emergencia = models.CharField(max_length=20, verbose_name="Telefono Emergencia", null=True, blank=True)
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)  
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")

@@ -26,7 +26,7 @@ class EmpleadosAdmin(admin.ModelAdmin):
     list_display = ('usuario', 'cargo', 'id_empleado', 'eps', 'arl')
     ordering = ('usuario', 'fecha_ingreso', 'area')
     list_filter = ('usuario','fecha_ingreso')
-    search_fields = ('usuario',)
+    search_fields = ('usuario','cargo')
     
 admin.site.register(Empleados, EmpleadosAdmin)
 

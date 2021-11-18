@@ -27,3 +27,5 @@ class ProfileUpdate(UpdateView):
     def get_object(self):
         profile, created = Profile.objects.get_or_create(usuario=self.request.user)
         return profile
+
+
