@@ -100,6 +100,7 @@ class Empleados (models.Model):
     sueldo = models.DecimalField(verbose_name = "Sueldo", max_digits = 12, decimal_places = 2)
     eps = models.CharField(max_length = 100, verbose_name = "EPS", null = False)
     arl = models.CharField(max_length = 100, verbose_name = "ARL", null = False)
+    afp = models.CharField(max_length = 100, verbose_name = "AFP", null = False)
     cuenta_bancaria = models.CharField(max_length = 30, verbose_name = "Número de cuenta bancaria",null = True )
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
@@ -122,8 +123,8 @@ class Capacitaciones(models.Model):
 
 # Modelo Sanidad
 class Sanidad(models.Model):
-    enfermedad = models.CharField(verbose_name="Tipo de Enfermedad",max_length=255)
-    pandemia = models.CharField(verbose_name="Es Pandemia?", max_length=2)
+    enfermedad = models.CharField(verbose_name="Nombre de la enfermedad",max_length=255)
+    pandemia = models.CharField(verbose_name="Es Pandemia?",choices=SiNo, max_length=2)
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")    
 
