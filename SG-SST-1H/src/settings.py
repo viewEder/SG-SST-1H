@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     'empresa',
     'documentos',
     'proveedores',
-    #'formatos',
+    'formatos',
     'comites',
-    #'cronograma',
+    'cronograma',
 ]
 
 MIDDLEWARE = [
