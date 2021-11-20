@@ -10,7 +10,7 @@ from core.types.meses import Meses
 
 # Create your models here.
 
-class Ausentismo(models.Models):
+class Ausentismo(models.Model):
     mes = models.CharField(max_length=20, choices= Meses,verbose_name="Periodo", null=True, blank=True)
     nombre_completo = models.ForeignKey(Empleados, on_delete=models.CASCADE) 
     salario_dia = models.DecimalField(max_digits = 20, decimal_places = 2, verbose_name = "Salario día")
