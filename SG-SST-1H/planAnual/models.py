@@ -22,7 +22,7 @@ class PlanAnual (models.Model):
         verbose_name = "Plan Anual"
 
     def __str__(self):
-        return self.nombre_archivo
+        return str(self.anio)
 
 
 

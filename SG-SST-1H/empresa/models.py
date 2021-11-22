@@ -95,15 +95,15 @@ class Empleados (models.Model):
     cargo = models.ForeignKey(Cargos, on_delete=models.CASCADE)
     area = models.OneToOneField(Areas, on_delete=models.CASCADE)
     nivel = models.ForeignKey(NivelAcademico, on_delete=models.CASCADE )
-    id_empleado = models.CharField(max_length = 30, verbose_name = "ID empleado", null = True)
+    id_empleado = models.CharField(max_length = 30, verbose_name = "ID empleado")
     fecha_ingreso = models.DateField(verbose_name = "Fecha de ingreso", auto_now = False, auto_now_add = False)
     sueldo = models.DecimalField(verbose_name = "Sueldo", max_digits = 12, decimal_places = 2)
     eps = models.CharField(max_length = 100, verbose_name = "EPS", default="N/A", null = False)
     arl = models.CharField(max_length = 100, verbose_name = "ARL", default="N/A", null = False)
     afp = models.CharField(max_length = 100, verbose_name = "AFP", default="N/A", null = False)
     cuenta_bancaria = models.CharField(max_length = 30, verbose_name = "Número de cuenta bancaria",null = True )
-    create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
-    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
+    create_at = models.DateField(auto_now_add=True, verbose_name="Fecha de creación", null=True)
+    modify_at = models.DateField(auto_now=True, verbose_name="Fecha de actualización") 
     
     class Meta:
         verbose_name = "Empleado"

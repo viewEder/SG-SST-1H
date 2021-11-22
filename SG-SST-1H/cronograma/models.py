@@ -56,4 +56,4 @@ class EjecucionPresupuesto(models.Model):
         verbose_name = "Ejecucion"
         
     def __str__(self):
-        return self.actividad
+        return str(self.cronograma)

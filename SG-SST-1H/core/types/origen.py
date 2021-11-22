@@ -1,4 +1,4 @@
 Origen=(
-    (("EL"),("EL")),
-    (("AT"),("AT"))
+    (("Enfermedad laboral"),("Enfermedad laboral")),
+    (("Accidente de trabajo"),("Accidente de trabajo"))
 )
