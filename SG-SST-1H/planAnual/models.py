@@ -10,7 +10,7 @@ from core.types.phva import PHVA
 #Modelo Plan Anual
 class PlanAnual (models.Model):
 
-    anio= models.ForeignKey(Periodo, on_delete=models.CASCADE )
+    anio= models.ForeignKey(Periodo, on_delete=models.CASCADE, verbose_name= 'Año' )
     objetivo = models.TextField(verbose_name="Objetivo", max_length=250, null = False)
     metas = models.TextField(verbose_name="Metas", max_length=500, null = False)
     alcance = models.TextField(verbose_name="Alcance", max_length=250, null = False)
@@ -19,11 +19,10 @@ class PlanAnual (models.Model):
 
 
     class Meta:
-        verbose_name = "Plan Anual"
+        verbose_name_plural = "Plan anual"
 
     def __str__(self):
-        return self.nombre_archivo
-
+        return str(self.anio)
 
 
 # Modulo Estructura SGSST
@@ -36,8 +35,8 @@ class EstructuraSGSST(models.Model):
 
 
     class Meta:
-        verbose_name = "Estructura SGSST"
-        verbose_name_plural = "Estructuras SGSST" 
+        verbose_name = "Estructura SG-SST"
+        verbose_name_plural = "Estructuras SG-SST" 
 
     def __str__(self):
         return self.nombre
@@ -59,7 +58,7 @@ class ActividadesPlan(models.Model):
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
 
     class Meta:
-        verbose_name_plural = "Plan de Actividades"
+        verbose_name_plural = "Plan de actividades"
 
     def __str__(self):
         return self.actividad
