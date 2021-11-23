@@ -47,8 +47,9 @@ INSTALLED_APPS = [
     'comites',
     'cronograma',
     'planAnual',
+    'riesgos',
     'incapacidad',
-    'riesgos'
+    'pqrs',
 ]
 
 MIDDLEWARE = [

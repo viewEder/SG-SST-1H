@@ -1,4 +1,4 @@
 Clasificacion=(
     (("Inicial"),("Inicial")),
-    (("Prorroga"),("Prorroga"))
+    (("Prórroga"),("Prórroga"))
 )

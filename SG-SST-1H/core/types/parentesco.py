@@ -1,7 +1,7 @@
 Parentesco=(
-    (("Padres"),("Padres")),
-    (("Hermanos"),("Hermanos")),
-    (("Conyugue"),("Conyugue")),
-    (("Hijos"),("Hijos")),
+    (("Madre/Padre"),("Madre/Padre")),
+    (("Hermano/a"),("Hermano/a")),
+    (("Cónyuge"),("Cónyuge")),
+    (("Hijo/a"),("Hijo/a")),
     (("Otro"),("Otro")),
 )
