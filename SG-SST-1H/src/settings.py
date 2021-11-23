@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'comites',
     'cronograma',
     'planAnual',
+    'incapacidad',
     'riesgos'
 ]
 
