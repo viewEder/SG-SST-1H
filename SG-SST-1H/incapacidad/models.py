@@ -5,9 +5,6 @@ from core.types.origen import Origen
 from core.types.clasificacion import Clasificacion
 from core.types.meses import Meses
 
-
-
-
 # Create your models here.
 
 class Ausentismo(models.Model):

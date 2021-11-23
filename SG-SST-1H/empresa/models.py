@@ -111,7 +111,7 @@ class Empleados (models.Model):
         
     # Método string que devuelve el nombre de los empleados
     def __str__(self):
-        return self.id_empleado
+        return f'{self.usuario}'
     
 # Modelo capacitaciones 
 class Capacitaciones(models.Model):
