@@ -9,7 +9,7 @@ class HomePageView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {
-            'titulo': 'SG Seguridad en el Trabajo',
+            'titulo': 'SG Seguridad y Salud en el Trabajo',
             'mensaje': 'Python 1H',
             'boton': 'Ingresar'
 

@@ -48,5 +48,5 @@ class ParticipanteComite(models.Model):
         
     # Método string que devuelve los participantes del comite
     def __str__(self):
-        return self.participantes_comite
+        return str(self.rol_comite)
 

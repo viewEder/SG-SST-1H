@@ -9,6 +9,7 @@ from django.utils.decorators import method_decorator        # Método decorador 
 from django.contrib.auth.decorators import login_required   # Decorador para login requerido
 # Cargamos el Modelo de datos:
 from .models import Profile
+from empresa.models import Empleados
 # Cargamos el formulario de creacion de usuarios:
 from django.contrib.auth.forms import UserCreationForm      # Formulario por defecto de creación de usuario
 from django.urls import reverse_lazy                        # Función para redireccionar a una url

@@ -46,8 +46,8 @@ class ContactoEmergenciaForm(forms.ModelForm):
         fields = ['usuario','contacto_emergencia','parentesco_emergencia','telefono_emergencia']
         widgets = {
             'usuario': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'usuario'}),
-            'contacto_emergencia':  forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Contacto de Emergencia'}),
-            'parentesco_emergencia': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Parentesco Emergencia'}),
-            'telefono_emergencia': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Teléfono de Emergencia'}),
+            'contacto_emergencia':  forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Contacto de emergencia'}),
+            'parentesco_emergencia': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Parentesco'}),
+            'telefono_emergencia': forms.TextInput(attrs = {'class':'form-control mt-2', 'placeholder':'Teléfono de emergencia'}),
             
         }
