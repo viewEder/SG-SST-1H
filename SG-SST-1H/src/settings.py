@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'cronograma',
     'planAnual',
     'riesgos',
-    'incapacidad'
+    'incapacidad',
+    'pqrs',
 ]
 
 MIDDLEWARE = [
