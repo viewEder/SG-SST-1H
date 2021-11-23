@@ -19,15 +19,10 @@ class PlanAnual (models.Model):
 
 
     class Meta:
-        verbose_name = "Plan Anual"
+        verbose_name_plural = "Plan Anual"
 
     def __str__(self):
-<<<<<<< HEAD
         return str(self.anio)
-
-=======
-        return self.metas
->>>>>>> 6e307fb7fa933b3d50fbf580bf9f28183c932aef
 
 
 # Modulo Estructura SGSST

@@ -12,7 +12,7 @@ admin.site.register(Periodo, PeriodoAdmin)
 
 class CronogramaPresupuestoAdmin(admin.ModelAdmin):
     readonly_fields = ('create_at', 'modify_at')  # no permite modificar estos campos
-    list_display = ('periodo', 'actividad', 'valor_presuputado')
+    list_display = ('periodo', 'actividad', 'valor_presupuestado')
     ordering = ('periodo',)
     list_filter = ('periodo', 'actividad',)
     search_fields = ('periodo', 'actividad',)
