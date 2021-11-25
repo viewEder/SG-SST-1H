@@ -19,7 +19,7 @@ class PlanAnual (models.Model):
 
 
     class Meta:
-        verbose_name_plural = "Plan Anual"
+        verbose_name_plural = "Plan anual"
 
     def __str__(self):
         return str(self.anio)
@@ -35,8 +35,8 @@ class EstructuraSGSST(models.Model):
 
 
     class Meta:
-        verbose_name = "Estructura SGSST"
-        verbose_name_plural = "Estructuras SGSST" 
+        verbose_name = "Estructura SG-SST"
+        verbose_name_plural = "Estructuras SG-SST" 
 
     def __str__(self):
         return self.nombre
@@ -58,7 +58,7 @@ class ActividadesPlan(models.Model):
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
 
     class Meta:
-        verbose_name_plural = "Plan de Actividades"
+        verbose_name_plural = "Plan de actividades"
 
     def __str__(self):
         return self.actividad
