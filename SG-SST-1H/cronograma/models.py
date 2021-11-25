@@ -53,7 +53,7 @@ class EjecucionPresupuesto(models.Model):
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
 
     class Meta:
-        verbose_name_plural = "Ejecucion"
+        verbose_name_plural = "Ejecución"
         
     def __str__(self):
         return str(self.cronograma)

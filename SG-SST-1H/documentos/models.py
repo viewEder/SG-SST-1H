@@ -45,8 +45,8 @@ class DocuEmpresa(models.Model):
 
     
     class Meta:
-        verbose_name = "Documento Empresa"
-        verbose_name_plural = "Documentos Empresas"
+        verbose_name = "Documento empresa"
+        verbose_name_plural = "Documentos empresa"
         
     def __str__(self) -> str:
         return self.nombre_documento
