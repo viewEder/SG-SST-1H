@@ -53,12 +53,12 @@ class Elementos(models.Model):
 
 class DetalleElementos(models.Model):
     # Atributo de la clase Detalle elementos
-    id_proveedor = models.CharField(max_length = 30, verbose_name = "ID proveedor", null = True)
-    id_elemento = models.CharField(max_length = 30, verbose_name = "ID elemento", null = True)
+    id_proveedor = models.ForeignKey(Proveedores, on_delete=CASCADE)
+    id_elemento = models.ForeignKey(Elementos, on_delete=CASCADE)
     descripcion = models.CharField(max_length = 256, verbose_name = "Descripción del elemento", null = False)
     vida_util = models.CharField(max_length = 30, verbose_name = "Vida útil", null = True)
     activo = models.BooleanField(default= False, verbose_name= "Se encuentra activo?", null= False)
-    fecha_creacion = models.DateField(verbose_name = "Fecha de creación", auto_now = False, auto_now_add = False)
+    fecha_creacion = models.DateField(verbose_name = "Fecha de registro", auto_now = False, auto_now_add = False)
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
 

@@ -15,7 +15,7 @@ class Ausentismo(models.Model):
     codigo_enfermedad = models.CharField(max_length = 15, verbose_name = "Codigo de la enfermedad", null = False)
     diagnostico = models.CharField(max_length = 250, verbose_name = "Diagnostico", null = False)
     grupo_dx = models.CharField(max_length = 100, verbose_name = "Grupo DX", null = False)
-    segmento_osteomuscular = models.CharField(max_length = 100, verbose_name = "Codigo de la enfermedad", null = False)
+    segmento_osteomuscular = models.CharField(max_length = 100, verbose_name = "Segmento Osteomuscular", null = False)
     origen = models.CharField(max_length = 50, verbose_name = "Origen de la enfermedad", null = False)
     clasificacion =models.CharField(max_length=30, choices= Clasificacion,verbose_name="Origen de la incapacidad", null=True, blank=True)
     fecha_inicio = models.DateField(verbose_name = "Fecha de de inicio", auto_now = False, auto_now_add = False)
@@ -29,7 +29,7 @@ class Ausentismo(models.Model):
 
     class Meta:
         verbose_name = "Ausentismo"
-                
+    
     # Método string que devuelve el diagnostico
     def __str__(self):
         return self.diagnostico
