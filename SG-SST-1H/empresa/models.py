@@ -30,7 +30,6 @@ class Empresa (models.Model):
     nivel_de_riesgo = models.CharField(max_length = 10, verbose_name = "Nivel de riesgo", null = False)
     naturaleza_juridica = models.CharField(max_length = 50, verbose_name = "Naturaleza jurídica", null = False)
     correo_electronico = models.CharField(max_length = 25, verbose_name = "Correo electrónico", null = False)
-    tipo_de_empresa = models.CharField(max_length = 25, verbose_name = "Tipo de empresa", null = False)
     numeros_telefonicos = models.CharField(max_length = 40, verbose_name = "Números telefónicos", null = False)
     create_at = models.DateField(auto_now_add=True, verbose_name="Creado el", null=True)
     modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el") 
