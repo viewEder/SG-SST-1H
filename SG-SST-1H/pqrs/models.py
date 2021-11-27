@@ -25,14 +25,14 @@ class Quejas(models.Model):
 
 class AccionesQueja(models.Model):
     queja = models.ForeignKey(Quejas, on_delete=CASCADE)
-    nota_accion = models.TextField(verbose_name="Acciones sobre la queja", null = False)
-    estado = models.CharField(verbose_name="Estado de la Acción", max_length=25, choices=EstadoAtencion, null=False, default="Sin Atender")
-    create_at = models.DateField(auto_now_add=True, verbose_name="Registrado el", null=True)
-    modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
+    _nota_accion = models.TextField(verbose_name="Acciones sobre la queja", null = False)
+    _estado = models.CharField(verbose_name="Estado de la Acción", max_length=25, choices=EstadoAtencion, null=False, default="Sin Atender")
+    _create_at = models.DateField(auto_now_add=True, verbose_name="Registrado el", null=True)
+    _modify_at = models.DateField(auto_now=True, verbose_name="Actualizado el")
     
     class Meta:
         verbose_name = "Atenciones"
         verbose_name_plural = "Atenciones"
     
     def __str__(self) -> str:
-        return f'{self.nota_accion[0:15]} Ver más'
+        return f'{self._nota_accion[0:15]} Ver más'
