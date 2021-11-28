@@ -32,12 +32,24 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',         # Inscribimos la app registration para la administración Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',                 # Inscribimos la app core para la gestión de las vistas
+    'empresa',
+    'documentos',
+    'proveedores',
+    'formatos',
+    'comites',
+    'cronograma',
+    'planAnual',
+    'riesgos',
+    'incapacidad',
+    'pqrs',
 ]
 
 MIDDLEWARE = [
@@ -108,9 +120,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
 
@@ -124,7 +136,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Variables Media:
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "core/static/media/img")
+
+# Statics en todas las apps:
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_REDIRECT_URL = "/"
